@@ -1,2 +1,67 @@
+$family-font: 'Baloo Paaji 2', cursive
+$font-size-normal: 20px
+$font-size-big: 28px
+$first-color: #000000
+$third-color: #8fa9ac
+$secondary-color: #38bac6
+$background-color: #111111
+
+a
+    text-decoration: none
+    &:hover
+        text-decoration: none
+
 body
-    background-color: blue
+    background-color: #ffffff  
+    font-family: $family-font
+    font-size: $font-size-normal
+
+h2
+    font-size: $font-size-big
+    margin-bottom: 0
+
+header
+    margin-top: 20px
+
+.logo__box
+    display: flex
+    align-items: flex-end
+.logo__img
+    width: 120px
+
+.user
+    height: 100%
+    display: flex
+    justify-content: space-between
+    align-items: center
+    height: 100%
+ 
+
+.user__list
+    margin-bottom: 0
+    padding: 10px
+    list-style: none
+    display: flex
+    justify-content: space-around
+    width: 100% 
+    border: 1px solid $secondary-color
+    border-radius: 70px
+
+
+.user__item
+    color: $secondary-color
+    font-size: $font-size-normal
+
+.link
+    color: $third-color
+    &:hover
+        color: $secondary-color
+    &--inverted
+        color: $secondary-color
+        &:hover
+             color: $third-color
+
+.line
+    width: 95%
+    border-top: 1.4px solid $secondary-color
+
