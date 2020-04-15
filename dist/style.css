@@ -68,7 +68,111 @@ header {
 
 .line {
   width: 95%;
-  border-top: 1.4px solid #38bac6;
+  border-top: 1px solid #38bac6;
+}
+
+.day__box {
+  border: 1px solid #38bac6;
+  border-radius: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  text-align: center;
+  line-height: 1.3;
+  z-index: 1;
+  background-color: #ffffff;
+  position: relative;
+}
+
+.day__header {
+  margin-top: 5px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #38bac6;
+}
+
+.day__heading {
+  font-size: 28px;
+}
+
+.day__subheading {
+  font-size: 16px;
+  color: #8fa9ac;
+}
+
+.day__textbox {
+  font-size: 20px;
+}
+
+.day__text {
+  border-bottom: 1px solid #8fa9ac;
+  margin-bottom: 12px;
+}
+.day__text:last-child {
+  border-bottom: 0;
+}
+
+.slider__box {
+  display: flex;
+  align-items: center;
+  border: 1px solid #38bac6;
+  border-radius: 20px;
+  background: #ffffff;
+  overflow: hidden;
+  width: 255px;
+  height: 100%;
+}
+
+.slider {
+  width: 255px;
+  height: 100%;
+  padding: 10px;
+  position: relative;
+}
+
+.slider__list {
+  padding: 0;
+  display: flex;
+  list-style: none;
+}
+
+.slider__item {
+  width: 255px;
+  height: 100%;
+  position: relative;
+}
+
+.hidden {
+  display: none;
+}
+
+.slider__nav {
+  position: absolute;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+}
+
+.slider__heading {
+  text-align: center;
+}
+
+.arrow__box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.arrow {
+  color: #8fa9ac;
+  cursor: pointer;
+}
+.arrow--right {
+  transform: rotate(180deg);
+}
+.arrow:hover {
+  color: #38bac6;
 }
 
 /*# sourceMappingURL=style.css.map */
