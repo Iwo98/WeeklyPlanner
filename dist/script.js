@@ -67,12 +67,76 @@ $(function (){
             
                 $prevSlide.toggleClass("hidden");
                 $activeSlide.toggleClass("hidden");     
-            }
+            }     
+        });  
+    }
+
+    const popup = function(){
+
+        let $clone;
+        let $text;
+        $('.box-js').each(function (){
+            let $box = $(this);
+            let $openButton = $(".button--open", $box);
+            let $textBox = $(".day__textbox", $box);
+            $text = $(".day__text");
+            
 
         
+            
+            let $closeButton = $(".button--close");
+            let $addButton = $(".button--add")
+            let $popup = $(".bg-modal");
+            let $inputText = $(".input-js");
+            let $body = $(document.body);
+            let $window = $(window);
+            
+            let iScrollHeight;
+
+            
+
+            $openButton.on("click", function(e){     
+                iScrollHeight = $window.scrollTop();
+                $clone = $(".clone").clone();
+                $clone.removeClass("clone");
+                e.preventDefault();
+
+
+                $popup.css("top",iScrollHeight + "px");
+                $popup.removeClass("hidden");  
+                $body.css("overflow-y","hidden");
+
+                $addButton.on("click", function(e){
+                    let inputText;
+                    e.preventDefault();
+    
+                    inputText = $inputText.val();
+                    $clone.text(inputText);
+                    $clone.appendTo($textBox);
+                    
+                    $text.on("click", function(){
+                        $(this).remove();
+                    }); 
+                   $popup.addClass("hidden");    
+                   $body.css("overflow-y","auto");
+                   $text = $(".day__text");
+                });
+
+                
+                $inputText.val("");
+            });
+
+            $closeButton.on("click", function(e){
+                e.preventDefault();
+
+                $popup.addClass("hidden");  
+                $body.css("overflow-y","auto");
+            });  
+                  
         });
+    }
 
     
-    }
+    popup();
     slider();
 });
