@@ -74,32 +74,29 @@ $(function (){
     const popup = function(){
 
         let $clone;
-        let $text;
         $('.box-js').each(function (){
             let $box = $(this);
             let $openButton = $(".button--open", $box);
             let $textBox = $(".day__textbox", $box);
-            $text = $(".day__text");
+            let $text;
             
-
-        
-            
+           
             let $closeButton = $(".button--close");
             let $addButton = $(".button--add")
             let $popup = $(".bg-modal");
             let $inputText = $(".input-js");
             let $body = $(document.body);
             let $window = $(window);
+            $text = $(".day__text");
             
             let iScrollHeight;
-
-            
 
             $openButton.on("click", function(e){     
                 iScrollHeight = $window.scrollTop();
                 $clone = $(".clone").clone();
                 $clone.removeClass("clone");
                 e.preventDefault();
+                
 
 
                 $popup.css("top",iScrollHeight + "px");
@@ -109,34 +106,38 @@ $(function (){
                 $addButton.on("click", function(e){
                     let inputText;
                     e.preventDefault();
-    
+
                     inputText = $inputText.val();
                     $clone.text(inputText);
                     $clone.appendTo($textBox);
-                    
-                    $text.on("click", function(){
-                        $(this).remove();
-                    }); 
-                   $popup.addClass("hidden");    
-                   $body.css("overflow-y","auto");
-                   $text = $(".day__text");
-                });
+                    $text = $(".day__text");
 
-                
+                    deleteRegistration($text);
+                    closePopup();
+                });
                 $inputText.val("");
             });
 
             $closeButton.on("click", function(e){
                 e.preventDefault();
+                closePopup();               
+            });  
 
+           const closePopup = function(){
                 $popup.addClass("hidden");  
                 $body.css("overflow-y","auto");
-            });  
-                  
+           }                
         });
     }
 
-    
+    const deleteRegistration = function(text){
+
+        text.on("click",function(e){
+            $(this).remove();
+        });
+    }
+
+    deleteRegistration($(".day__text"));
     popup();
     slider();
 });

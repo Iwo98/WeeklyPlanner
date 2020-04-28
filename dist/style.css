@@ -136,6 +136,11 @@ header {
 .day__text {
   margin-bottom: 12px;
   cursor: pointer;
+  transition: background 250ms ease-in-out 150ms;
+  border-radius: 8px;
+}
+.day__text:hover {
+  background-color: #ff3333;
 }
 
 .slider__box {
@@ -192,7 +197,7 @@ header {
   margin-top: 10px;
   font-size: 16px;
   color: #ffffff;
-  transition: background 250ms ease-in-out;
+  transition: background 250ms ease-in-out 150ms;
 }
 .button:hover {
   background: #2d969f;
