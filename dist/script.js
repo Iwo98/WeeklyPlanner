@@ -22,7 +22,7 @@ $(function (){
             });
 
             $slide.first().attr("data-status", "active");
-           // $slide.first().fadeIn(500);
+           
 
             firstId = $slide.first().data("id");
             slideLastIndex = $slide.last().data("id");
@@ -111,10 +111,6 @@ $(function (){
                 $addButton.on("click", function(e){
                     let inputText;
                     e.preventDefault();
-
-                    
-                   
-                    
 
                     inputText = $inputText.val();
                     $clone.text(inputText);
