@@ -176,6 +176,8 @@ header {
   overflow: hidden;
   width: 255px;
   height: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 .slider__box--photos {
   width: 100%;
@@ -317,6 +319,10 @@ header {
 
 .overflow--hidden {
   overflow-y: hidden;
+}
+
+.text-end {
+  text-align: end;
 }
 
 .text-js {
