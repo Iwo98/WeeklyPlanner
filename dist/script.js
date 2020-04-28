@@ -74,30 +74,35 @@ $(function (){
     const popup = function(){
 
         let $clone;
+
         $('.box-js').each(function (){
-            let $box = $(this);
-            let $openButton = $(".button--open", $box);
-            let $textBox = $(".day__textbox", $box);
+            const $box = $(this);
+            const $openButton = $(".button--open", $box);
+            const $textBox = $(".textbox-js", $box);
             let $text;
             
-           
             let $closeButton = $(".button--close");
             let $addButton = $(".button--add")
-            let $popup = $(".bg-modal");
+            let $popup = $(".modal");
             let $inputText = $(".input-js");
             let $body = $(document.body);
             let $window = $(window);
-            $text = $(".day__text");
+            $text = $(".text-js");
             
             let iScrollHeight;
 
             $openButton.on("click", function(e){     
                 iScrollHeight = $window.scrollTop();
+                let attribute = $textBox.data("attr");
                 $clone = $(".clone").clone();
                 $clone.removeClass("clone");
                 e.preventDefault();
-                
 
+                if(attribute==="slider"){
+                    $clone.removeClass("day__text");
+                    $clone.addClass("slider__text");
+                }
+                
 
                 $popup.css("top",iScrollHeight + "px");
                 $popup.removeClass("hidden");  
@@ -107,10 +112,14 @@ $(function (){
                     let inputText;
                     e.preventDefault();
 
+                    
+                   
+                    
+
                     inputText = $inputText.val();
                     $clone.text(inputText);
                     $clone.appendTo($textBox);
-                    $text = $(".day__text");
+                    $text = $(".text-js");
 
                     deleteRegistration($text);
                     closePopup();
@@ -137,7 +146,7 @@ $(function (){
         });
     }
 
-    deleteRegistration($(".day__text"));
+    deleteRegistration($(".text-js"));
     popup();
     slider();
 });

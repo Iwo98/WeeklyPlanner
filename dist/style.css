@@ -135,12 +135,6 @@ header {
 
 .day__text {
   margin-bottom: 12px;
-  cursor: pointer;
-  transition: background 250ms ease-in-out 150ms;
-  border-radius: 8px;
-}
-.day__text:hover {
-  background-color: #ff3333;
 }
 
 .slider__box {
@@ -299,7 +293,7 @@ header {
   color: #ffffff;
 }
 
-.bg-modal {
+.modal {
   width: 100%;
   height: 100%;
   overflow-y: hidden;
@@ -311,7 +305,7 @@ header {
   align-items: center;
 }
 
-.modal-content {
+.modal__content {
   width: 500px;
   height: 200px;
   background-color: #ffffff;
@@ -337,6 +331,15 @@ input {
 
 .overflow--hidden {
   overflow-y: hidden;
+}
+
+.text-js {
+  cursor: pointer;
+  transition: background 250ms ease-in-out 150ms;
+  border-radius: 8px;
+}
+.text-js:hover {
+  background-color: #ff3333;
 }
 
 /*# sourceMappingURL=style.css.map */
